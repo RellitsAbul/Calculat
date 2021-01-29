@@ -1,8 +1,5 @@
 package Сalculator;
-
-
 public class Main {
-
     public static void main(String[] args) {
         Input input = null;
         try {
@@ -11,17 +8,17 @@ public class Main {
             e.printStackTrace();
         }
         String[] words = input.getWords();
+        String operations = input.getOparations();
         Translator trans = null;
         try {
-            trans = new Translator( words );
+            trans = new Translator(words);
         } catch (InputException e) {
             e.printStackTrace();
         }
         int[] operand = trans.getOperand();
-
         Arithmetic answer = null;
         try {
-            answer = new Arithmetic(operand, words[1]);
+            answer = new Arithmetic(operand, operations);
         } catch (ArithmeticException e) {
             e.printStackTrace();
         }

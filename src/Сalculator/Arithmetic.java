@@ -1,9 +1,8 @@
 package Сalculator;
-
 public class Arithmetic {
     private int answer;
-
     public Arithmetic(int[] operand, String operation) throws ArithmeticException {
+       // System.out.println(1);
      if (operation.equals("+"))
          answer = operand[0] + operand[1];
      else if (operation.equals("-"))

@@ -1,24 +1,21 @@
 package Сalculator;
-
 public class Translator  {
     private int[] operand = new int[2];
-    private int arabicOrRome = 0; // 0 - нет присвоения ; 2 - одно арабское, одно не присвоено;
-                                  // 3 - одно рисмкое, одно не присвоено; 5 - римское и арабское; 4 - арабские
+    private int arabicOrRome = 0;
     public Translator(String [] input) throws InputException {
         String[][] number = {{"1","2","3","4","5","6","7","8","9","10"},
                 {"I","II","III","IV","V","VI","VII","VIII","IX","X"}};
         for (int i = 0; i < 2; i++)
             for(int j = 0; j < 2; j++)
                 for(int k = 0; k < 10; k++)
-                    if(input[j+j].equals(number[i][k])) {
+                    if(input[j].equals(number[i][k])) {
                         operand[j] = k + 1;
                         arabicOrRome += (i+2);
                     }
-        if(arabicOrRome != 4 || arabicOrRome != 6)
+        if(arabicOrRome != 4 && arabicOrRome != 6)
             throw new InputException("Input is incorrect");
     }
     public String TransToRome(int ans){
-        System.out.println(ans);
         String ansToRome = "";
         if (ans < 0)
             ansToRome = "-";
