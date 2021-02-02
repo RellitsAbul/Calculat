@@ -40,7 +40,7 @@ public class Translator  {
                 decStr = decStr + Rome[dozens][0];
         }
         else if ( quantity == 9)
-            decStr = Rome[dozens][1] + Rome[dozens][2];
+            decStr = Rome[dozens][0] + Rome[dozens][2];
         else
             decStr = Rome[dozens][2];
         return decStr;
